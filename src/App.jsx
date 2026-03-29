@@ -3,9 +3,10 @@ import './App.css'
 import Banner from './component/Banner/Banner'
 import Rating from './component/Banner/Rating/Rating'
 import Steps from './component/Banner/Rating/Steps/Steps'
-import Footer from './component/Footer/Footer'
 import NavBar from './component/NavBar/NavBar'
 import Simple from './component/Simple/Simple'
+import Ready from './component/Ready/Ready'
+import Footer from './component/Footer/Footer'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
 
      <Simple/>
 
+     <Ready/>
      <Footer/>
     </>
   )
