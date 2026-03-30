@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 const DigiToolsCart = ({ premiumTools, carts, setCarts }) => {
@@ -7,7 +8,15 @@ const DigiToolsCart = ({ premiumTools, carts, setCarts }) => {
 
     const handlePurchasing = () => {
         setIssAddToCart(true)
+
+        const isFound = carts.find(item => item.id === premiumTools.id)
+        if(isFound){
+            toast.error("Item already in Cart")
+            return;
+        }
+
         setCarts([...carts,premiumTools])
+        toast.success("Added to cart successfully!")
     }
 
 

@@ -10,7 +10,6 @@ import Footer from './component/Footer/Footer'
 import PremiumToolsSection from './component/PremiumToolsSection/PremiumToolsSection'
 import { Suspense, useState } from 'react'
 import Cart from './component/Cart/Cart'
-import { BiCake } from 'react-icons/bi'
 
 
 const getPremiumToolsSection = async () => {
@@ -32,7 +31,7 @@ function App() {
 
   return (
     <>
-      <NavBar carts={carts}/>
+      <NavBar carts={carts} setActiveTab={setActiveTab}/>
 
       <Banner />
 
@@ -64,6 +63,7 @@ function App() {
 
       <Ready />
       <Footer />
+      
     </>
   )
 }

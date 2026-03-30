@@ -1,7 +1,7 @@
 import React from 'react';
 import shopping from "../../assets/products/shopping-cart.png"
 
-const NavBar = ({ carts }) => {
+const NavBar = ({ carts, setActiveTab }) => {
     return (
         <div className="navbar bg-base-100 shadow-sm container mx-auto">
             <div className="navbar-start">
@@ -17,7 +17,11 @@ const NavBar = ({ carts }) => {
                 </ul>
             </div>
             <div className="navbar-end gap-5">
-                <div className="relative">
+                <div className="relative"
+                    onClick={() => {
+                        setActiveTab("Cart");
+                        window.scrollTo({ top:1000, behavior: "smooth" });
+                    }}>
                     <img className='hover:cursor-pointer w-8' src={shopping} alt="" />
 
                     {carts.length > 0 && (
