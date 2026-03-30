@@ -1,0 +1,47 @@
+import React, { useState } from 'react';
+
+
+const DigiToolsCart = ({ premiumTools }) => {
+
+    const [isAddToCart, setIssAddToCart] = useState(false)
+
+    const tagColors = {
+        "popular": "bg-blue-100 text-blue-600",
+        "best seller": "bg-green-100 text-green-600",
+        "new": "bg-orange-100 text-orange-600"
+    }
+    return (
+        <div className=' p-4 space-y-7 relative shadow shadow-gray-600 rounded-md border-gray-500 overflow-hidden '>
+            <div>
+                <span className="text-4xl">{premiumTools.icon}</span>
+            </div>
+            <div>
+                <h2 className=' font-bold text-2xl'>{premiumTools.name}</h2>
+                <p className='text-[#627382]'>{premiumTools.description}</p>
+            </div>
+            <div className=' flex items-center'>
+                <h2 className=' font-bold text-2xl'>${premiumTools.price}</h2>
+                <p>{premiumTools.period}</p>
+            </div>
+            <div>
+                <div>
+                    <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-sm ${tagColors[premiumTools.tagType]}`}>{premiumTools.tag}</span>
+                    <ul>
+                        {premiumTools.features.map((feature, index) => (
+                            <li key={index}>✅ {feature}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <button onClick={() => setIssAddToCart(true)} className={`btn w-full text-white rounded-full ${isAddToCart
+                    ? "bg-green-500"
+                    : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+                }`}>
+                {isAddToCart ? "✔ Add to Cart!" : "Buy Now"}
+            </button>
+
+        </div>
+    );
+};
+
+export default DigiToolsCart;
