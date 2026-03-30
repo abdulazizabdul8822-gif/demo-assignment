@@ -5,6 +5,11 @@ const Cart = ({ carts, setCarts }) => {
 
     const handlePayment = () => {
         setCarts([])
+    };
+
+    const handleDelete = (removeItem) => {
+        const filteredArray = carts.filter(c => c.id !== removeItem.id)
+        setCarts(filteredArray)
     }
 
     const totalPrice = carts.reduce((sum, item) => sum + item.price, 0)
@@ -13,7 +18,7 @@ const Cart = ({ carts, setCarts }) => {
             {
                 carts.length === 0 ?
 
-                    <div className=' bg-[#ffffff] mt-10 p-4'>
+                    <div className=' bg-[#ffffff] mt-10 mb-10 p-4 p-10'>
                         <div >
                             <h1 className=' text-2xl font-bold'>Your Carts</h1>
                         </div>
@@ -27,22 +32,25 @@ const Cart = ({ carts, setCarts }) => {
 
                         {
 
-                            carts.map((item, index) => <div key={index} className=' flex gap-5 shadow shadow-gray-600 rounded-md border-gray-500 bg-gray-200 py-5 p-4 mb-10'>
+                            carts.map((item, index) => <div key={index} className=' flex justify-between items-center gap-5 shadow shadow-gray-600 rounded-md border-gray-500 bg-gray-200 py-5 p-4 mb-10'>
 
-                                <div>
+                                <div className='flex items-center gap-4'>
                                     <span className="text-4xl">{item.icon}</span>
+                                    <div>
+                                        <h2 className='font-semibold'>{item.name}</h2>
+                                        <div className='flex items-center gap-1'>
+                                            <h2 className='font-bold text-xl'>${item.price}</h2>
+                                            <p>/{item.period}</p>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <div>
-                                        <h2>{item.name}</h2>
-                                    </div>
-                                    <div className=' flex'>
-                                        <h2 className=' font-semibold text-xl'>${item.price}</h2>
-                                        <p>/{item.period}</p>
-                                    </div>
-                                </div>
-                            </div>)
+
+                                <button onClick={() => handleDelete(item)} className='btn btn-error text-white rounded-lg'>Remove</button>
+
+                            </div>
+
+                            )
                         }
 
                         <div className=' flex justify-between items-center bg-zinc-50 mb-10 p-5 mt-5 rounded-lg'>
@@ -55,7 +63,7 @@ const Cart = ({ carts, setCarts }) => {
                     </>
             }
 
-        </div>
+        </div >
     );
 };
 

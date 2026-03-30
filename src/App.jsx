@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar carts={carts}/>
 
       <Banner />
 
@@ -46,7 +46,7 @@ function App() {
         <a onClick={() => setActiveTab("Cart")} role="tab" className={`tab w-40 font-bold rounded-full ${activeTab === "Cart"
             ? "tab-active text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
             : ""
-          }`}>Cart (2)</a>
+          }`}>{`Cart (${carts.length})`}</a>
       </div>
 
       <Suspense fallback={<div className="flex justify-center items-center min-h-[200px]">

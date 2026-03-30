@@ -1,7 +1,7 @@
 import React from 'react';
 import shopping from "../../assets/products/shopping-cart.png"
 
-const NavBar = () => {
+const NavBar = ({ carts }) => {
     return (
         <div className="navbar bg-base-100 shadow-sm container mx-auto">
             <div className="navbar-start">
@@ -17,7 +17,15 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-5">
-                <img className=' hover:cursor-pointer' src={shopping} alt="" />
+                <div className="relative">
+                    <img className='hover:cursor-pointer w-8' src={shopping} alt="" />
+
+                    {carts.length > 0 && (
+                        <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+                            {carts.length}
+                        </span>
+                    )}
+                </div>
                 <button className='hover:cursor-pointer'>Login</button>
                 <a className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full text-white">Get Started</a>
             </div>
