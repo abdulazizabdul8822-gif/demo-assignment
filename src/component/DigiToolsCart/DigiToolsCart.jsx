@@ -27,7 +27,7 @@ const DigiToolsCart = ({ premiumTools, carts, setCarts }) => {
         "new": "bg-orange-100 text-orange-600"
     }
     return (
-        <div className=' p-4 space-y-7 relative shadow shadow-gray-600 rounded-md border-gray-500 overflow-hidden '>
+        <div className=' p-4 space-y-7 relative shadow shadow-gray-600 rounded-md border-gray-500 overflow-hidden transition-transform duration-300 hover:scale-102'>
             <div>
                 <span className="text-4xl">{premiumTools.icon}</span>
             </div>

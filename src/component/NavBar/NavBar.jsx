@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import shopping from "../../assets/products/shopping-cart.png"
+import { FaShoppingCart } from 'react-icons/fa';
 import { TiThMenu } from 'react-icons/ti';
 import { IoIosCloseCircle } from "react-icons/io";
 
@@ -34,16 +34,16 @@ const NavBar = ({ carts, setActiveTab }) => {
                     <li><a>FAQ</a></li>
                 </ul>
             </div>
-            <div className="navbar-end md:gap-5">
+            <div className="navbar-end gap-3 md:gap-5">
                 <div className="relative z-50"
                     onClick={() => {
                         setActiveTab("Cart");
                         window.scrollTo({ top: 1000, behavior: "smooth" });
                     }}>
-                    <img className='hover:cursor-pointer w-8 h-8 min-w-[32px] object-contain flex-shrink-0 brightness-0' src={shopping} alt="" />
+                    <FaShoppingCart className='text-xl cursor-pointer' />
 
                     {carts.length > 0 && (
-                        <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+                        <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
                             {carts.length}
                         </span>
                     )}

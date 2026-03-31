@@ -1,5 +1,5 @@
 import React from 'react';
-import shopping from '../../assets/products/shopping-cart.png'
+import { FaShoppingCart } from 'react-icons/fa'
 import { toast } from 'react-toastify';
 
 const Cart = ({ carts, setCarts }) => {
@@ -29,7 +29,7 @@ const Cart = ({ carts, setCarts }) => {
                             <h1 className=' text-2xl font-bold'>Your Carts</h1>
                         </div>
                         <div className=' flex justify-center items-center flex-col space-y-5 mb-10'>
-                            <img className=' h-30 w-30' src={shopping} alt="" />
+                            <FaShoppingCart className='text-8xl text-gray-300 animate-pulse' />
                             <p>Your Cart is empty</p>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ const Cart = ({ carts, setCarts }) => {
 
                         {
 
-                            carts.map((item, index) => <div key={index} className=' flex justify-between items-center gap-5 shadow shadow-gray-600 rounded-md border-gray-500 bg-gray-200 py-5 p-4 mb-10'>
+                            carts.map((item, index) => <div key={index} className=' flex justify-between items-center gap-5 shadow shadow-gray-600 rounded-md border-gray-500 bg-gray-200 py-5 p-4 mb-10 transition-transform duration-300 hover:scale-102'>
 
                                 <div className='flex items-center gap-4'>
                                     <span className="text-4xl">{item.icon}</span>
@@ -52,7 +52,7 @@ const Cart = ({ carts, setCarts }) => {
                                 </div>
 
 
-                                <button onClick={() => handleDelete(item)} className='btn btn-error text-white rounded-lg'>Remove</button>
+                                <button onClick={() => handleDelete(item)} className='btn btn-error text-white  rounded-lg'>Remove</button>
 
                             </div>
 
@@ -65,7 +65,7 @@ const Cart = ({ carts, setCarts }) => {
                             <h1 className=' font-bold text-2xl'>${totalPrice}</h1>
                         </div>
 
-                        <button onClick={handlePayment} className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full text-white w-full mb-10 font-bold text-2xl'>Proceed to Checkout</button>
+                        <button onClick={handlePayment} className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full text-white w-full mb-10 font-bold text-2xl transition-transform duration-300 hover:scale-102'>Proceed to Checkout</button>
 
                     </>
             }
