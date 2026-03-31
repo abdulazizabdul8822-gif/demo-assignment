@@ -4,7 +4,7 @@ A modern digital tools marketplace to browse and purchase premium productivity a
 
 
 ## 🌐 Live Site
-🔗 [https://digitools-azizul-00.netlify.app/](https://digitools-azizul-00.netlify.app/)
+🔗 [https://demo-assignment-gamma.vercel.app/](https://demo-assignment-gamma.vercel.app/)
 
 
 ## 🛠️ Technologies Used
