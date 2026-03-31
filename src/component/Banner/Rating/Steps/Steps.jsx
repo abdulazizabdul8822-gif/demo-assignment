@@ -21,14 +21,14 @@ const Steps = () => {
                     <div className=' relative bg-[#FFFFFF] flex flex-col items-center justify-between p-10 rounded-md'>
                          <span className='absolute top-3 right-4 bg-linear-to-r from-[#2e13f6] to-[#8c03f5] rounded-full text-white h-8 w-8 flex items-center justify-center'>02</span>
                         <img src={packageImg} alt="" />
-                        <h2 className=' font-semibold text-xl'>Create Account</h2>
-                        <p className=' text-gray-500'>Sign up for free in seconds. No credit card required to get started.</p>
+                        <h2 className=' font-semibold text-xl'>Choose Products</h2>
+                        <p className=' text-gray-500'>Browse our catalog and select the tools that fit your needs.</p>
                     </div>
                     <div className=' relative bg-[#FFFFFF] flex flex-col items-center justify-between p-10 rounded-md'>
                          <span className='absolute top-3 right-4 bg-linear-to-r from-[#2e13f6] to-[#8c03f5] rounded-full text-white h-8 w-8 flex items-center justify-center'>03</span>
                         <img src={rocket} alt="" />
-                        <h2 className=' font-semibold text-xl'>Create Account</h2>
-                        <p className=' text-gray-500'>Sign up for free in seconds. No credit card required to get started.</p>
+                        <h2 className=' font-semibold text-xl'>Start Creating</h2>
+                        <p className=' text-gray-500'>Download and start using your premium tools immediately.</p>
                     </div>
                 </div>
             </div>

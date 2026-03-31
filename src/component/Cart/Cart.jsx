@@ -60,7 +60,8 @@ const Cart = ({ carts, setCarts }) => {
                         }
 
                         <div className=' flex justify-between items-center bg-zinc-50 mb-10 p-5 mt-5 rounded-lg'>
-                            <h2 className=' font-bold text-gray-600'>Total</h2>
+                            {/* <h2 className=' font-bold text-gray-600'>Total</h2> */}
+                            <h2 className='font-bold text-gray-600'>Total <span className="text-sm font-normal text-gray-400">(prices may vary by period)</span></h2>
                             <h1 className=' font-bold text-2xl'>${totalPrice}</h1>
                         </div>
 

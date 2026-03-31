@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+
 import { toast } from 'react-toastify';
 
 
 const DigiToolsCart = ({ premiumTools, carts, setCarts }) => {
 
-    const [isAddToCart, setIssAddToCart] = useState(false)
+    
+    const isAddToCart = carts.some(item => item.id === premiumTools.id)
 
     const handlePurchasing = () => {
-        setIssAddToCart(true)
+   
 
         const isFound = carts.find(item => item.id === premiumTools.id)
         if(isFound){
@@ -52,7 +53,7 @@ const DigiToolsCart = ({ premiumTools, carts, setCarts }) => {
                     ? "bg-green-500"
                     : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
                 }`}>
-                {isAddToCart ? "✔ Add to Cart!" : "Buy Now"}
+                {isAddToCart ? "✔ Added to Cart!" : "Buy Now"}
             </button>
 
         </div>
