@@ -12,8 +12,10 @@ import { Suspense, useState } from 'react'
 import Cart from './component/Cart/Cart'
 
 
+
+
 const getPremiumToolsSection = async () => {
-  const res = await fetch("/public/digiData.json")
+  const res = await fetch("/digiData.json")
   return res.json()
 }
 
@@ -48,12 +50,15 @@ function App() {
           }`}>{`Cart (${carts.length})`}</a>
       </div>
 
+      
+
       <Suspense fallback={<div className="flex justify-center items-center min-h-[200px]">
         <span className="loading loading-ring loading-xl"></span>
       </div>}>
         {activeTab === "Products" && <PremiumToolsSection toolsPromise={toolsPromise} carts={carts} setCarts={setCarts}/>}
       </Suspense>
 
+      
 
       {activeTab === "Cart" && <Cart carts={carts} setCarts={setCarts}/>}
 

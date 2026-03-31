@@ -7,7 +7,7 @@ const Cart = ({ carts, setCarts }) => {
     const handlePayment = () => {
         setCarts([])
         toast.success("Payment Successfully")
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 1000, behavior: "smooth" });
     };
 
     const handleDelete = (removeItem) => {
