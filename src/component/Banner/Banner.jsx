@@ -42,7 +42,7 @@ const Banner = () => {
                 {/* Right Image */}
                 <div className="flex justify-center lg:justify-end">
                     <div>
-                        <img
+                        <img className=' animate-pulse'
 
                             src={BannerImage}
                             alt="AI Models Banner"
